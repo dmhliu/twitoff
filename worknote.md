@@ -1,6 +1,4 @@
-## 20 July 20200
-
-Project kickoff. 
+## 20 July 2020 : Guided Project kickoff  
 
  - copied code, it ran. 
  - got confused by directory structures
@@ -8,6 +6,8 @@ Project kickoff.
  - attempt reorganize twitoff into different structure 
  - attempt to add in blueprints
  - understand sql alchemy
+
+--- 
 
 ### 21 July progress
 
@@ -24,3 +24,7 @@ Project kickoff.
 - buttons for admin actions?
 - API practice
 - requests
+
+--- 
+
+### July 22 Progress
