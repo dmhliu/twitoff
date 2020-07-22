@@ -1,4 +1,5 @@
 import tweepy
+from os import getenv
 import basilica
 from .models import DB, Tweet, User
 
@@ -21,7 +22,7 @@ def add_or_update_user(username):
     """ add or update a user and their tweets, error if not a twitter user
     """
     try:
-        twitter_user - TWITTER.get_user(username)
+        twitter_user = TWITTER.get_user(username)
         db_user = (User.query.get(twitter_user.id),
                     User(id=twitter_user.id, name=username))
         DB.session.add(db_user)
@@ -46,7 +47,7 @@ def add_or_update_user(username):
     else: 
         DB.session.commit()
 
-def add_users(users=TWITTER_USERS):
+def add_users(users=TEST_USERS):
     for users in users:
         add_or_update_user(user)
 def update_all_users():

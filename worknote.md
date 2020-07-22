@@ -28,3 +28,6 @@
 --- 
 
 ### July 22 Progress
+ - install sklearn
+ - custom CSS From bootswatch
+ -

@@ -1,5 +1,6 @@
 from flask import Blueprint, current_app, render_template
 from twitoff.models import DB, add_test_users
+
 admin = Blueprint('admin', __name__, url_prefix='/admin')
 
 @admin.route('/')
