@@ -8,4 +8,19 @@ Project kickoff.
  - attempt reorganize twitoff into different structure 
  - attempt to add in blueprints
  - understand sql alchemy
- 
+
+### 21 July progress
+
+- fixed routing using blueprints (main,admin)
+- extended base.html
+- passed userlist to renderer, with table template
+- buttons
+- start implementing flask dotenv config
+
+#### Todo:
+
+- finish dotenv config implementation
+- forms
+- buttons for admin actions?
+- API practice
+- requests
