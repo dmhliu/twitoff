@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}User list page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="width: 100%;">
+<table>
+    <tr>
+        <th></th><th>Handle:</th>
+    </tr>
+    {% for user in userlist %}
+        <tr>
+           <td></td> <td>{{user}}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

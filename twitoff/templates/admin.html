@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}ADMIN HOMEPAGE{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+{% block body %}
+  {% block content %}
+    <h2 align='center'>Welcome to Twitoff Admin</h2>
+    
+  {% endblock %}
+  <ul>
+    <li><a href="/admin/add_test_users" class="btn btn-primary btn-block">Add test users</a></li>
+  </ul>
+  <a href="/">Leave Admin...</a>
+{% endblock %}

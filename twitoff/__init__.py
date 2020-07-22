@@ -1,14 +1,7 @@
-"""
-Entry point for the Flask application 
-"""
+#!/ usr/bin/env python
+# this file indicates we are in a twitoff package folder. 
 
-from flask import Flask
-from flask import Blueprint
-from .controllers import main
-from flask_bootstrap import Bootstrap
+from .app import create_app
 
+APP = create_app()  # create an instance of the app, a global 
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
-
-app.register_blueprint(main, url_prefix='/')
