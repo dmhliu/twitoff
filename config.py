@@ -12,7 +12,7 @@ class Config(object):
 
 class ProductionConfig(Config):
     DEBUG = False
-
+    DATABASE_URL="postgres://uvadxjadmevwsy:f833132af9efeab4c7cd43d60705464b730384dcbf8173a5d5a180fd947e0bb3@ec2-52-201-55-4.compute-1.amazonaws.com:5432/d8sgib3hpuoulo"
 
 class StagingConfig(Config):
     DEVELOPMENT = True
