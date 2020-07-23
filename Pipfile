@@ -17,6 +17,7 @@ flask-dotenv = "*"
 sklearn = "*"
 gunicorn = "*"
 psycopg2 = "*"
+flask-bootstrap = "*"
 
 [requires]
 python_version = "3.7"
