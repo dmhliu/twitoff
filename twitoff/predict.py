@@ -9,9 +9,9 @@ def predict_user(user1_name, user2_name, tweet_text):
     """
     user1 = User.query.filter(User.name == user1_name).one()   # dot one just gets 1 result
     user2 = User.query.filter(User.name == user2_name).one()   # dot one just gets 1 result
-    user1_embeddings = np.array([tweet.embedding for tweet in users1.tweets])
+    user1_embeddings = np.array([tweet.embedding for tweet in user1.tweets])
     user2_embeddings = np.array([tweet.embedding for tweet in user2.tweets])
-    embeddings = np.vstack([user1_embeddings,user2_embeddings]) # X
+    embeddings = np.vstack([user1_embeddings, user2_embeddings])  # X
     labels = np.concatenate([np.ones(len(user1.tweets)),  # y
                              np.zeros(len(user2.tweets))])
     log_reg = LogisticRegression().fit(embeddings, labels)

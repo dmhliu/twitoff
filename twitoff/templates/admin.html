@@ -14,14 +14,15 @@
 {% block body %}
   {% block content %}
     <h2 align='center'>Welcome to Twitoff Admin</h2>
-    
-
-  <ul>
-    <li><a href="/admin/add_test_users" class="btn btn-secondary btn-block">Add test users</a></li>
-  </ul>
-  <a href="/"class="btn btn-secondary btn-block" >Leave Admin...</a>
-
-{%if message %}
+    <div class="col-md-12 text-center">
+    <div align ="center" class="btn-group">
+    <a href="/admin/add_test_users" class="btn btn-primary">Add test users</a>
+    <a href="/admin/update_all" class ="btn btn-secondary">Update all users</a>
+    <a href="/admin/reset" class="btn btn-secondary">Reset DB<</a>
+    <a href="/"class="btn btn-secondary " >Leave Admin...</a>
+</div>
+</div>
+{% if message %}
 <div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

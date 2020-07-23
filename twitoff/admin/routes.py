@@ -22,3 +22,15 @@ def update_all():
     except:
         m="there was a problem updating users!"
     return render_template('admin.html', message=m)
+
+@admin.route('/reset')
+def reset():
+    DB.drop_all()  # Reset the DB
+    DB.create_all()
+    return render_template('base.html', title='Reset database!')
+
+@admin.route('/update')
+def update():
+    update_all_users()
+    return render_template('base.html', users=User.query.all(),
+                            title='All users and tweets updated!')

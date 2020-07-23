@@ -7,20 +7,25 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def root():
-    return render_template('base.html')
+    return render_template('home.html')
 
 @main.route('/view_users')
 def get_users():
     userlist = User.query.all()
 #    return '\n'.join([str(user) for user in userlist])
     return render_template('userlist.html', userlist=userlist)
-@main.route('/compare', methods=['POST'])
+
+@main.route('/compare', methods=['POST'])     #link this to a button on a form on the main 
 def compare(message = ''):
     user1,user2 = sorted([request.values['user1'],
                         request.values['user2']])
     if user1 == user2:
         message = 'cant'
     else:
-        prediction = predict_user(user1,user2,tweet_text="")
-
-    return render_template('predict.hmtl', prediction)
+        prediction = predict_user(user1, user2,
+                                request.values['tweet_text'])
+        message = '"{}" is more likely to be said by {} than {}'.format(
+            request.values['tweet_text'], user1 if prediction else user2,
+            user2 if prediction else user1
+            )
+    return render_template('predict.html', title='Prediction',message=message )
