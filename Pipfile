@@ -15,6 +15,8 @@ basilica = "*"
 python-dotenv = "*"
 flask-dotenv = "*"
 sklearn = "*"
+gunicorn = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

@@ -11,8 +11,8 @@ TEST_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
 
 TWITTER_AUTH = tweepy.OAuthHandler(
     getenv('TWITTER_API_KEY'),
-    getenv('TWITTER_API_KEY_SECRET')
-)
+    "W5Zv3DWVgBLRqJfyg0aC0wgTUPxPFiSdpksca3dgFDho5gXStx")
+
 TWITTER = tweepy.API(TWITTER_AUTH)  # API INSTANCE
 
 BASILICA = basilica.Connection(getenv('BASILICA_KEY')) # 
@@ -21,14 +21,16 @@ BASILICA = basilica.Connection(getenv('BASILICA_KEY')) #
 def add_or_update_user(username):
     """ add or update a user and their tweets, error if not a twitter user
     """
+    print(getenv('TWITTER_API_KEY'),
+    getenv('TWITTER_API_KEY_SECRET'))
     try:
         twitter_user = TWITTER.get_user(username)
-        db_user = (User.query.get(twitter_user.id),
+        db_user = (User.query.get(twitter_user.id) or
                     User(id=twitter_user.id, name=username))
         DB.session.add(db_user)
         ## get as many recent non-retweet / reply statuses as possible,
         # twitter api max is 200 
-        tweets = twitter.user.timeline(
+        tweets = twitter_user.timeline(
             count=200, exclude_replies=True, include_rts=False,
             tweet_mode='extended',  since_id=db_user.newest_tweet_id)
 
@@ -46,6 +48,7 @@ def add_or_update_user(username):
         raise e
     else: 
         DB.session.commit()
+        return "ok"
 
 def add_users(users=TEST_USERS):
     for users in users:
