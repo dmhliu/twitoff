@@ -19,15 +19,14 @@
 
 #### Todo:
 
-- finish dotenv config implementation
-- forms
-- buttons for admin actions?
-- API practice
-- requests
 
 --- 
 
 ### July 22 Progress
  - install sklearn
  - custom CSS From bootswatch
- -
+ - fix auth error manually 
+ - addl API practice
+ - more templates
+ - bugfixes
+ 
